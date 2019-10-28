@@ -9,6 +9,7 @@ docker push freulein/multi-server:latest
 docker push freulein/multi-client:$SHA
 docker push freulein/multi-worker:$SHA
 docker push freulein/multi-server:$SHA
+
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=freulein/multi-server:$SHA
 kubectl set image deployments/client-deployment client=freulein/multi-client:$SHA
